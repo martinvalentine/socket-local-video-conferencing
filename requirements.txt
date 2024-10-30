@@ -1,4 +1,5 @@
-Flask
+fastapi
 opencv-python
 requests
 tk
+numpy
