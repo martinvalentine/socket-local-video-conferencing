@@ -1,4 +1,4 @@
-# Video Calling Application with Python, Flask, and UDP
+# Video Calling Application with Python, FastAPI, and UDP (socket)
 
 ## Project Overview
 A simple video calling application using Python’s `socket` library, FastAPI for client management, and UDP for low-latency video streaming. The application allows clients to register, list available clients, start a call, send video frames and messages, and disconnect.
