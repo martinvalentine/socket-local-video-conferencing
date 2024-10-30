@@ -10,8 +10,8 @@ VIDEO_SERVER_PORT = 6112  # UDP port for video streaming
 SERVER_PORT = 5000  # HTTP port for FastAPI
 
 # Client management and connection setup
-clients = {}
-connected_pairs = {}
+clients = {} # IP address of clients
+connected_pairs = {} # Dictionary to store connected pairs of clients (sender, receiver)
 
 # Setup server
 BUFF_SIZE = 65536
@@ -37,7 +37,7 @@ def handle_client(client_addr):
 # Accept clients and pair them
 def accept_clients():
     while True:
-        msg, client_addr = server_socket.recvfrom(BUFF_SIZE)
+        msg, client_addr = server_socket.recvfrom(BUFF_SIZE) # Receive message from client
         print("Client connected:", client_addr)
 
         # Pair clients

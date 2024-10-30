@@ -1,7 +1,7 @@
 # Video Calling Application with Python, Flask, and UDP
 
 ## Project Overview
-A simple video calling application using Python’s `socket` library, Flask for client management, and UDP for low-latency video streaming. The application allows clients to register, list available clients, start a call, send video frames and messages, and disconnect.
+A simple video calling application using Python’s `socket` library, FastAPI for client management, and UDP for low-latency video streaming. The application allows clients to register, list available clients, start a call, send video frames and messages, and disconnect.
 
 ---
 
@@ -33,7 +33,7 @@ The client features include:
 - Uses UDP sockets to handle real-time video streaming between clients.
 
 ### `client.py`
-- Captures video with OpenCV, serializes frames with `pickle`, and transmits them over UDP.
+- Captures video with OpenCV, serializes frames with `base64`, and transmits them over UDP.
 - Requests server endpoints for registration, call initiation, and disconnection.
 
 ---
@@ -64,9 +64,9 @@ The client features include:
 ## Technologies Used
 
 - **Python socket library**: For UDP and TCP socket programming.
-- **Flask**: For HTTP endpoints to manage client registration, listing, and call control.
+- **FastAPI**: For HTTP endpoints to manage client registration, listing, and call control.
 - **OpenCV**: For video capture and display.
-- **Pickle & Struct**: For serializing and deserializing video frames.
+- **base64**: For serializing and deserializing video frames.
 
 ---
 
@@ -84,3 +84,5 @@ The client features include:
 2. Run the server: `python server.py`.
 3. Run the client: `python client.py` (register with a unique name).
 4. Start and manage calls through client interactions with the server.
+
+---

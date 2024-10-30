@@ -5,7 +5,7 @@ import numpy as np
 
 # Client configurations
 SERVER_IP = "192.168.2.22"
-VIDEO_SERVER_PORT = 6111
+VIDEO_SERVER_PORT = 6112
 
 # Client setup for receiving video stream
 BUFF_SIZE = 65536

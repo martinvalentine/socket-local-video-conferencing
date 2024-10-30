@@ -29,7 +29,7 @@ while True:
     frame = cv2.resize(frame, (640, 480))  # Adjust as needed (e.g., (320, 240) for smaller frames)
 
     # Encode frame
-    _, buffer = cv2.imencode('.jpg', frame, [int(cv2.IMWRITE_JPEG_QUALITY), 50])  # Lower quality if needed
+    _, buffer = cv2.imencode('.jpg', frame, [int(cv2.IMWRITE_JPEG_QUALITY), 50])
     jpg_as_text = base64.b64encode(buffer)
 
     # Check size before sending
