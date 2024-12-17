@@ -10,8 +10,8 @@ FORWARDING_PORT = 6000  # Port for forwarding video data
 client_ports = {}
 
 # Initialize the server socket for forwarding
-server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-server_socket.bind((SERVER_IP, FORWARDING_PORT))
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP socket
+server_socket.bind((SERVER_IP, FORWARDING_PORT)) # Bind to the forwarding port
 print("Server listening on port:", FORWARDING_PORT)
 
 
@@ -19,8 +19,8 @@ print("Server listening on port:", FORWARDING_PORT)
 def handle_forwarding():
     while True:
         # Receive message from any client
-        msg, client_addr = server_socket.recvfrom(65536)
-        client_ip, client_port = client_addr
+        msg, client_addr = server_socket.recvfrom(65536) # Receive data up to 64KB
+        client_ip, client_port = client_addr # Extract client IP and port
 
         # Register client and assign pairing if first-time connection
         if client_ip not in client_ports:
